@@ -1,0 +1,25 @@
+saltgui_output_formats: doc,saltguihighstate,json
+saltgui_datetime_fraction_digits: 3
+
+saltgui_templates:
+    template1:
+        description: First template
+        target: "*"
+        command: test.fib num=10
+    template2:
+        description: Second template
+        targettype: glob
+        target: dev*
+        command: test.version
+
+saltgui_hide_jobs:
+    - test.ping
+
+saltgui_show_jobs:
+    - grains.items
+
+saltgui_preview_grains:
+    - osrelease_info
+
+saltgui_public_pillars:
+    - pub_.*
